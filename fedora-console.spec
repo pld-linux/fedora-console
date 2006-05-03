@@ -1,5 +1,4 @@
 Summary:	Fedora DS Java Remote Management Console
-Summary(pl):	-
 Name:		fedora-console
 Version:	1.0.2
 Release:	0.1
@@ -8,16 +7,15 @@ Group:		Applications
 Source0:	http://directory.fedora.redhat.com/sources/%{name}-%{version}.tar.gz
 # Source0-md5:	cc2ccdf7a0f0a1ce78326251105a12f9
 URL:		http://directory.fedora.redhat.com/wiki/Client_software
-#Requires: ldapjdk >= 4.17, jss >= 3.6
-#BuildRequires:	ldapjdk >= 4.17, jss >= 3.6
+#BuildRequires:	jss >= 3.6
+#BuildRequires:	ldapjdk >= 4.17
+#Requires:	jss >= 3.6
+#Requires:	ldapjdk >= 4.17
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A Java based remote management console used for Managing Fedora
 Administration Server and Fedora Directory Server.
-
-%description -l pl
--
 
 %prep
 %setup -q
@@ -29,7 +27,7 @@ ant
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
 install built/release/jars/fedora-* $RPM_BUILD_ROOT%{_datadir}/%{name}
-install -d $RPM_BUILD_ROOT/usr/bin
+install -d $RPM_BUILD_ROOT%{_bindir}
 install console/startconsole $RPM_BUILD_ROOT/%{_bindir}
 
 cd $RPM_BUILD_ROOT%{_datadir}/%{name}
@@ -44,7 +42,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%doc AUTHORS CREDITS ChangeLog NEWS README THANKS TODO
 %{_datadir}/%{name}/fedora-base-%{version}.jar
 %{_datadir}/%{name}/fedora-mcc-%{version}.jar
 %{_datadir}/%{name}/fedora-mcc-%{version}_en.jar
@@ -55,4 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/fedora-mcc_en.jar
 %{_datadir}/%{name}/fedora-nmclf.jar
 %{_datadir}/%{name}/fedora-nmclf_en.jar
-%{_bindir}/startconsole
+%attr(755,root,root) %{_bindir}/startconsole
