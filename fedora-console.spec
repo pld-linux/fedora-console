@@ -10,6 +10,7 @@ Source1:	ftp://ftp.mozilla.org/pub/mozilla.org/security/jss/releases/JSS_3_3_RTM
 # Source1-md5:	efcae3a220aba17bf98cdcb6c36fc55e
 URL:		http://directory.fedora.redhat.com/wiki/Client_software
 BuildRequires:	jakarta-ant >= 1.6
+BuildRequires:	jdk
 #BuildRequires:	jss >= 3.6
 BuildRequires:	ldapsdk >= 4.17
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
