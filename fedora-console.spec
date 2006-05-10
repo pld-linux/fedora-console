@@ -1,4 +1,6 @@
+# TODO: package jss and use system package
 Summary:	Fedora DS Java Remote Management Console
+Summary(pl):	Konsola w Javie do zdalnego zarz±dzania serwerem Fedora DS
 Name:		fedora-console
 Version:	1.0.2
 Release:	0.1
@@ -18,6 +20,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A Java based remote management console used for Managing Fedora
 Administration Server and Fedora Directory Server.
+
+%description -l pl
+Napisana w Javie konsola do zdalnego zarz±dzania serwerami Fedora
+Administration Server i Fedora Directory Server.
 
 %prep
 %setup -q
@@ -45,6 +51,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/startconsole
+%dir %{_datadir}/%{name}
 %{_datadir}/%{name}/fedora-base-%{version}.jar
 %{_datadir}/%{name}/fedora-mcc-%{version}.jar
 %{_datadir}/%{name}/fedora-mcc-%{version}_en.jar
@@ -55,4 +63,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/fedora-mcc-1.0_en.jar
 %{_datadir}/%{name}/fedora-nmclf-1.0.jar
 %{_datadir}/%{name}/fedora-nmclf-1.0_en.jar
-%attr(755,root,root) %{_bindir}/startconsole
