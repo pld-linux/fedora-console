@@ -37,7 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
 install ../built/release/jars/fedora-* $RPM_BUILD_ROOT%{_datadir}/%{name}
 install -d $RPM_BUILD_ROOT%{_bindir}
-install startconsole $RPM_BUILD_ROOT/%{_bindir}
+install startconsole $RPM_BUILD_ROOT%{_bindir}
 
 cd $RPM_BUILD_ROOT%{_datadir}/%{name}
 ln -s fedora-base-1.0.jar fedora-base-%{version}.jar
