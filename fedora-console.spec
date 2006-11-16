@@ -10,6 +10,7 @@ Source0:	http://directory.fedora.redhat.com/sources/%{name}-%{version}.tar.gz
 URL:		http://directory.fedora.redhat.com/wiki/Client_software
 BuildRequires:	ant >= 1.6
 BuildRequires:	jdk
+BuildRequires:	jpackage-utils
 BuildRequires:	jss >= 3.3
 BuildRequires:	ldapsdk >= 4.17
 Requires:	jre
