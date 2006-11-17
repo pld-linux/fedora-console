@@ -13,6 +13,7 @@ BuildRequires:	jdk
 BuildRequires:	jpackage-utils
 BuildRequires:	jss >= 3.3
 BuildRequires:	ldapsdk >= 4.17
+BuildRequires:	rpmbuild(macros) >= 1.294
 Requires:	jre
 Requires:	jss >= 3.3
 Requires:	ldapsdk >= 4.17
