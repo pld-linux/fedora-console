@@ -1,5 +1,5 @@
 Summary:	Fedora DS Java Remote Management Console
-Summary(pl):	Konsola w Javie do zdalnego zarz±dzania serwerem Fedora DS
+Summary(pl.UTF-8):   Konsola w Javie do zdalnego zarzÄ…dzania serwerem Fedora DS
 Name:		fedora-console
 Version:	1.0.3
 Release:	0.1
@@ -23,8 +23,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A Java based remote management console used for Managing Fedora
 Administration Server and Fedora Directory Server.
 
-%description -l pl
-Napisana w Javie konsola do zdalnego zarz±dzania serwerami Fedora
+%description -l pl.UTF-8
+Napisana w Javie konsola do zdalnego zarzÄ…dzania serwerami Fedora
 Administration Server i Fedora Directory Server.
 
 %prep
